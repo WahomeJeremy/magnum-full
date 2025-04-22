@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "magnum/package.json",
+        "use": "@vercel/react"
+      },
+      {
+        "src": "magnum-backend/api/*",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/magnum/$1"
+      },
+      {
+        "src": "/api/(.*)",
+        "dest": "/magnum-backend/api/$1"
+      }
+    ]
+  }
+  
